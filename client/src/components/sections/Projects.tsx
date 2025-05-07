@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { useQuery } from "@tanstack/react-query";
-import { Project } from "@shared/schema";
+import { Project } from "@shared/types";
 import { Button } from "@/components/ui/button";
 import { motion } from "framer-motion";
 import { fadeIn, staggerContainer } from "@/lib/animations";

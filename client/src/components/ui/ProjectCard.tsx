@@ -1,6 +1,6 @@
 import { useLocation } from "wouter";
 import { motion } from "framer-motion";
-import { Project } from "@shared/schema";
+import { Project } from "@shared/types";
 import { Github, ExternalLink, ArrowRight } from "lucide-react";
 
 interface ProjectCardProps {

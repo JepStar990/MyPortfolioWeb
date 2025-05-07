@@ -1,5 +1,5 @@
 import { useQuery } from "@tanstack/react-query";
-import { Skill } from "@shared/schema";
+import { Skill } from "@shared/types";
 import { motion } from "framer-motion";
 import { fadeIn, staggerContainer } from "@/lib/animations";
 import useIntersectionObserver from "@/hooks/use-intersection-observer";
