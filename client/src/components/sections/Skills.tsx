@@ -1,23 +1,34 @@
-import { useQuery } from "@tanstack/react-query";
-import { Skill } from "@shared/types";
 import { motion } from "framer-motion";
 import { fadeIn, staggerContainer } from "@/lib/animations";
 import useIntersectionObserver from "@/hooks/use-intersection-observer";
 
+type Skill = {
+  id: number;
+  name: string;
+  percentage: number;
+  category: string;
+};
+
+const skillsData: Skill[] = [
+  { id: 1, name: "Python", percentage: 95, category: "data-engineering" },
+  { id: 2, name: "SQL", percentage: 90, category: "data-engineering" },
+  { id: 3, name: "Apache Spark", percentage: 85, category: "data-engineering" },
+  { id: 4, name: "Airflow", percentage: 80, category: "data-engineering" },
+  { id: 5, name: "Kafka", percentage: 75, category: "data-engineering" },
+  { id: 6, name: "Tableau", percentage: 90, category: "visualization" },
+  { id: 7, name: "Power BI", percentage: 85, category: "visualization" },
+  { id: 8, name: "D3.js", percentage: 80, category: "visualization" },
+  { id: 9, name: "Plotly", percentage: 85, category: "visualization" },
+  { id: 10, name: "Matplotlib/Seaborn", percentage: 90, category: "visualization" },
+  { id: 11, name: "TensorFlow", percentage: 85, category: "machine-learning" },
+  { id: 12, name: "Scikit-learn", percentage: 80, category: "machine-learning" },
+  { id: 13, name: "Keras", percentage: 75, category: "machine-learning" },
+  { id: 14, name: "Pandas", percentage: 90, category: "machine-learning" },
+  { id: 15, name: "NumPy", percentage: 90, category: "machine-learning" }
+];
+
 export default function Skills() {
   const { ref, inView } = useIntersectionObserver({ triggerOnce: true });
-
-  const { data: dataEngineeringSkills = [] } = useQuery<Skill[]>({
-    queryKey: ['/api/skills', { category: 'data-engineering' }],
-  });
-
-  const { data: reportingSkills = [] } = useQuery<Skill[]>({
-    queryKey: ['/api/skills', { category: 'visualization' }],
-  });
-
-  const { data: aiMlSkills = [] } = useQuery<Skill[]>({
-    queryKey: ['/api/skills', { category: 'ai-ml' }],
-  });
 
   const getProficiencyLevel = (percentage: number) => {
     if (percentage >= 80) return 'Expert';
@@ -72,7 +83,7 @@ export default function Skills() {
             </h3>
 
             <div className="space-y-4">
-              {dataEngineeringSkills.map((skill) => (
+              {skillsData.filter(skill => skill.category === "data-engineering").map(skill => (
                 <div key={skill.id} className="flex justify-between items-center p-3 bg-dark-50 dark:bg-dark-700 rounded-lg">
                   <div className="flex items-center">
                     <span className="font-medium mr-3">{skill.name}</span>
@@ -90,7 +101,7 @@ export default function Skills() {
             </h3>
 
             <div className="space-y-4">
-              {reportingSkills.map((skill) => (
+              {skillsData.filter(skill => skill.category === "visualization").map(skill => (
                 <div key={skill.id} className="flex justify-between items-center p-3 bg-dark-50 dark:bg-dark-700 rounded-lg">
                   <div className="flex items-center">
                     <span className="font-medium mr-3">{skill.name}</span>
@@ -108,7 +119,7 @@ export default function Skills() {
             </h3>
 
             <div className="space-y-4">
-              {aiMlSkills.map((skill) => (
+              {skillsData.filter(skill => skill.category === "machine-learning").map(skill => (
                 <div key={skill.id} className="flex justify-between items-center p-3 bg-dark-50 dark:bg-dark-700 rounded-lg">
                   <div className="flex items-center">
                     <span className="font-medium mr-3">{skill.name}</span>

@@ -3,7 +3,7 @@ import { useMutation } from "@tanstack/react-query";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
 import { z } from "zod";
-import { insertMessageSchema } from "@shared/schema";
+import { insertMessageSchema } from "@shared/schema.client";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
@@ -73,15 +73,15 @@ export default function Contact() {
           <h2 className="text-3xl md:text-4xl font-bold mb-4">Let's Work Together</h2>
           <p className="text-dark-600 dark:text-dark-300">Interested in working together? Have a project in mind? Feel free to reach out!</p>
         </motion.div>
-        
-        <motion.div 
+
+        <motion.div
           variants={fadeIn("up", 0.4)}
           className="dark:bg-dark-800 rounded-xl shadow-lg overflow-hidden border border-dark-200 dark:border-dark-700"
         >
           <div className="grid grid-cols-1 md:grid-cols-2">
             <div className="p-6 md:p-8 lg:p-12">
               <h3 className="text-2xl font-bold mb-6">Send Me a Message</h3>
-              
+
               <Form {...form}>
                 <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-4">
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
@@ -98,7 +98,7 @@ export default function Contact() {
                         </FormItem>
                       )}
                     />
-                    
+
                     <FormField
                       control={form.control}
                       name="email"
@@ -113,7 +113,7 @@ export default function Contact() {
                       )}
                     />
                   </div>
-                  
+
                   <FormField
                     control={form.control}
                     name="subject"
@@ -127,7 +127,7 @@ export default function Contact() {
                       </FormItem>
                     )}
                   />
-                  
+
                   <FormField
                     control={form.control}
                     name="message"
@@ -135,20 +135,20 @@ export default function Contact() {
                       <FormItem>
                         <FormLabel>Message</FormLabel>
                         <FormControl>
-                          <Textarea 
-                            placeholder="Your message" 
+                          <Textarea
+                            placeholder="Your message"
                             rows={5}
-                            {...field} 
+                            {...field}
                           />
                         </FormControl>
                         <FormMessage />
                       </FormItem>
                     )}
                   />
-                  
-                  <Button 
-                    type="submit" 
-                    className="w-full flex items-center justify-center" 
+
+                  <Button
+                    type="submit"
+                    className="w-full flex items-center justify-center"
                     disabled={isPending}
                   >
                     <span>Send Message</span>
@@ -157,10 +157,10 @@ export default function Contact() {
                 </form>
               </Form>
             </div>
-            
+
             <div className="bg-primary-600 dark:bg-primary-700 p-6 md:p-8 lg:p-12 flex flex-col">
               <h3 className="text-2xl font-bold mb-6">Contact Information</h3>
-              
+
               <div className="space-y-6 mb-8">
                 <div className="flex items-start">
                   <div className="text-primary bg-white/20 p-3 rounded-full mr-4">
@@ -171,7 +171,7 @@ export default function Contact() {
                     <p className="text-primary/80">Gauteng, GP</p>
                   </div>
                 </div>
-                
+
                 <div className="flex items-start">
                   <div className="text-primary bg-white/20 p-3 rounded-full mr-4">
                     <Mail size={20} />
@@ -181,7 +181,7 @@ export default function Contact() {
                     <p className="text-primary/80">zwiswamuridili990@gmail.com</p>
                   </div>
                 </div>
-                
+
                 <div className="flex items-start">
                   <div className="text-primary bg-white/20 p-3 rounded-full mr-4">
                     <Phone size={20} />
@@ -192,7 +192,7 @@ export default function Contact() {
                   </div>
                 </div>
               </div>
-              
+
               <div className="mt-auto">
                 <h4 className="font-medium mb-4">Follow Me!</h4>
                 <div className="flex space-x-4">
