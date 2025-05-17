@@ -1,22 +1,30 @@
 import { useState } from "react";
-import { useMutation } from "@tanstack/react-query";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
 import { z } from "zod";
-import { insertMessageSchema } from "@shared/schema.client";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
-import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "@/components/ui/form";
+import {
+  Form,
+  FormControl,
+  FormField,
+  FormItem,
+  FormLabel,
+  FormMessage
+} from "@/components/ui/form";
 import { useToast } from "@/hooks/use-toast";
 import { Send, MapPin, Mail, Phone } from "lucide-react";
 import { motion } from "framer-motion";
 import { fadeIn, staggerContainer } from "@/lib/animations";
 import useIntersectionObserver from "@/hooks/use-intersection-observer";
-import { apiRequest } from "@/lib/queryClient";
 
-const formSchema = insertMessageSchema.extend({
+// Recreated form schema here to replace removed `insertMessageSchema`
+const formSchema = z.object({
+  name: z.string().min(1, { message: "Name is required" }),
   email: z.string().email({ message: "Please enter a valid email address" }),
+  subject: z.string().min(1, { message: "Subject is required" }),
+  message: z.string().min(1, { message: "Message is required" }),
 });
 
 type FormValues = z.infer<typeof formSchema>;
@@ -35,29 +43,19 @@ export default function Contact() {
     },
   });
 
-  const { mutate, isPending } = useMutation({
-    mutationFn: async (data: FormValues) => {
-      const response = await apiRequest("POST", "/api/contact", data);
-      return response.json();
-    },
-    onSuccess: () => {
-      toast({
-        title: "Success!",
-        description: "Your message has been sent successfully.",
-      });
-      form.reset();
-    },
-    onError: (error) => {
-      toast({
-        title: "Error",
-        description: "Failed to send your message. Please try again.",
-        variant: "destructive",
-      });
-    },
-  });
+  const [isPending, setIsPending] = useState(false);
 
-  const onSubmit = (data: FormValues) => {
-    mutate(data);
+  const onSubmit = async (data: FormValues) => {
+    setIsPending(true);
+    console.log("Form submitted:", data);
+
+    toast({
+      title: "Success (Mocked)!",
+      description: "This is a placeholder — no backend call made.",
+    });
+
+    form.reset();
+    setIsPending(false);
   };
 
   return (
@@ -151,7 +149,7 @@ export default function Contact() {
                     className="w-full flex items-center justify-center"
                     disabled={isPending}
                   >
-                    <span>Send Message</span>
+                    <span>{isPending ? "Sending..." : "Send Message"}</span>
                     <Send className="ml-2 h-4 w-4" />
                   </Button>
                 </form>
@@ -217,3 +215,4 @@ export default function Contact() {
     </section>
   );
 }
+
