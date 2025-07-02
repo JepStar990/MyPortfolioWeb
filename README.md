@@ -77,7 +77,7 @@ Utilities for handling queries, animations, types, and custom functions.
 The portfolio uses Framer Motion for entrance, interactive, and data visualization animations.
 
 ## Theme System
-Features a dark/light theme toggle with persistence in localStorage and detection of system preferences.
+Features a dark theme toggle with persistence in localStorage and detection of system preferences as a future enhancement.
 
 ## Responsive Design
 The website is fully responsive, optimized for all device sizes with a mobile-first approach.
