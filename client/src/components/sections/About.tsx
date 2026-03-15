@@ -17,7 +17,7 @@ export default function About() {
           <motion.div variants={fadeIn("right", 0.3)} className="md:w-1/3">
             <div className="relative">
               <div className="w-full h-80 bg-gradient-primary rounded-lg relative overflow-hidden shadow-lg">
-                <img src="https://images.unsplash.com/photo-1629904853716-f0bc54eea481?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80" 
+                <img src="https://media.licdn.com/dms/image/v2/D4D03AQHz1j0ZH1MY4g/profile-displayphoto-scale_400_400/B4DZgY5kvyGkA4-/0/1752764403691?e=1775088000&v=beta&t=dY1tpviGyIpS1DPwJjPG0Z5z4yYClb_5ePVNtdQGlE8" 
                      alt="my profile picture" 
                      className="w-full h-full object-cover opacity-99"
                 />
@@ -27,7 +27,7 @@ export default function About() {
                       <i className="ri-database-2-line text-5xl"></i>
                     </div>
                     <h3 className="text-xl font-bold">Data Engineer</h3>
-                    <p className="text-sm opacity-80">1.5+ Years Experience</p>
+                    <p className="text-sm opacity-80"3+ Years Experience</p>
                   </div>
                 </div>
               </div>
