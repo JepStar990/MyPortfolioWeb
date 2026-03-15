@@ -27,7 +27,7 @@ export default function About() {
                       <i className="ri-database-2-line text-5xl"></i>
                     </div>
                     <h3 className="text-xl font-bold">Data Engineer</h3>
-                    <p className="text-sm opacity-80"3+ Years Experience</p>
+                    <p className="text-sm opacity-80">3+ Years Experience</p>
                   </div>
                 </div>
               </div>
