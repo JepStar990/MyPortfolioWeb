@@ -17,9 +17,24 @@ export default function Hero() {
       navigate(href);
     }
   };
-
+  
+  const backgroundImageUrl =
+    "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&w=1920&q=80";
+  
   return (
-    <section className="min-h-screen flex flex-col justify-center relative pt-16 overflow-hidden">
+    <section 
+      className="min-h-screen flex flex-col justify-center relative pt-16 overflow-hidden bg-cover bg-center bg-no-repeat"
+        style={{
+          backgroundImage: `url('${backgroundImageUrl}')`,
+        }}
+      
+      {/* Overlay to keep text readable on top of the image */}
+      <div className="absolute inset-0 z-0 bg-white/70 dark:bg-black/70" />
+
+      {/* Background shapes (kept behind content, above image via z-0) */}
+      <div className="absolute top-40 left-0 z-0 w-64 h-64 bg-primary-500/10 rounded-full blur-3xl" />
+      <div className="absolute bottom-40 right-0 z-0 w-96 h-96 bg-secondary-500/10 rounded-full blur-3xl" />
+
       <motion.div
         variants={staggerContainer}
         initial="hidden"
