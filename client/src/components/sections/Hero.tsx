@@ -27,6 +27,7 @@ export default function Hero() {
         style={{
           backgroundImage: `url('${backgroundImageUrl}')`,
         }}
+    >
       
       {/* Overlay to keep text readable on top of the image */}
       <div className="absolute inset-0 z-0 bg-white/70 dark:bg-black/70" />
