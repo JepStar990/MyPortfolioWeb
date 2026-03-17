@@ -19,7 +19,7 @@ export default function Hero() {
   };
   
   const backgroundImageUrl =
-    "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&w=1920&q=80";
+    "https://static.vecteezy.com/system/resources/thumbnails/075/309/574/small/futuristic-technology-background-blue-lines-design-vector.jpg";
   
   return (
     <section 
