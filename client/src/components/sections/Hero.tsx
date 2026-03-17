@@ -19,7 +19,7 @@ export default function Hero() {
   };
   
   const backgroundImageUrl =
-    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRrrW1PsYgG82Wix2hERFJJok3Uii34Bx0hug&s";
+    "https://c4.wallpaperflare.com/wallpaper/1005/173/189/robot-android-digital-art-wallpaper-preview.jpg";
   
   return (
     <section 
