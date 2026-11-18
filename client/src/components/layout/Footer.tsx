@@ -45,7 +45,7 @@ export default function Footer() {
               <span>Zwiswa Muridili</span>
             </a>
             <p className="text-dark-300 mt-2 max-w-md">
-              Data Engineer & Reporting Specialist turning complex data into meaningful insights.
+              Data and AI Engineer turning complex data into meaningful insights.
             </p>
           </div>
           

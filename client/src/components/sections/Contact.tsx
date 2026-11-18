@@ -194,10 +194,10 @@ export default function Contact() {
               <div className="mt-auto">
                 <h4 className="font-medium mb-4">Follow Me!</h4>
                 <div className="flex space-x-4">
-                  <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="text-primary hover:text-white/80 bg-white/10 hover:bg-white/20 p-3 rounded-full transition-colors duration-200">
+                  <a href="https://www.linkedin.com/in/zwiswa-muridili-15439a302/" target="_blank" rel="noopener noreferrer" className="text-primary hover:text-white/80 bg-white/10 hover:bg-white/20 p-3 rounded-full transition-colors duration-200">
                     <i className="ri-linkedin-fill"></i>
                   </a>
-                  <a href="https://github.com" target="_blank" rel="noopener noreferrer" className="text-primary hover:text-white/80 bg-white/10 hover:bg-white/20 p-3 rounded-full transition-colors duration-200">
+                  <a href="https://github.com/JepStar990" target="_blank" rel="noopener noreferrer" className="text-primary hover:text-white/80 bg-white/10 hover:bg-white/20 p-3 rounded-full transition-colors duration-200">
                     <i className="ri-github-fill"></i>
                   </a>
                   <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" className="text-primary hover:text-white/80 bg-white/10 hover:bg-white/20 p-3 rounded-full transition-colors duration-200">

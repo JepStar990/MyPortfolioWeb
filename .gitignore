@@ -20,3 +20,10 @@ Thumbs.db
 # Other files to ignore
 *.tgz
 *.zip
+
+# Editor swap files
+*.swp
+*.swo
+
+# Local debug logs
+log.txt
