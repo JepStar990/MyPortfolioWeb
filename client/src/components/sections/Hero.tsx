@@ -46,7 +46,7 @@ export default function Hero() {
           <motion.div variants={fadeIn("up", 0.2)}>
             <span className="inline-block text-primary-600 dark:text-primary-400 font-medium mb-2">Hi, I'm</span>
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-4">Zwiswa Muridili</h1>
-            <h2 className="text-2xl md:text-3xl text-dark-600 dark:text-dark-300 mb-6">Data Engineer & Reporting Specialist</h2>
+            <h2 className="text-2xl md:text-3xl text-dark-600 dark:text-dark-300 mb-6">Data and AI Engineer</h2>
             <p className="text-lg text-dark-600 dark:text-dark-300 max-w-lg mb-8">
               I build robust data pipelines and create insightful visualizations that transform complex data into meaningful stories.
             </p>
